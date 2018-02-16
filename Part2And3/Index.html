@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="Scripts/req-5.js"></script>
+    <script src="Scripts/req-7.js"></script>
+</head>
+<body>
+    <h2>Requirement 5 and 6</h2>
+    <p>
+        String: <br />
+        <input id="r5input"/>
+    </p>
+
+    <p>
+        Prefix String: <br />
+        <input id="r5prefix" />
+    </p>
+
+    <p>
+        Suffix String: <br />
+        <input id="r5suffix" />
+    </p>
+    <button type="button" onclick="alert($('#r5input').val().startsWith($('#r5prefix').val()));">Check Prefix</button>
+    <button type="button" onclick="alert($('#r5input').val().endsWith($('#r5suffix').val()));">Check Suffix</button>
+    <button type="button" onclick="alert($('#r5input').val().stripHtml());">Strip HTML</button>
+
+    <h2>Requirement 7</h2>
+
+    <div id="r7">
+        Test <a href="http://google.com">Google</a>
+        <div>
+            Window 1 <a href="http://google.com" data-window-group ="W1">Google</a>
+        </div>
+        <div>
+            Window 1 <a href="http://google.com" data-window-group="W1">Google</a>
+        </div>
+        <div>
+            Window 2 <a href="http://google.com" data-window-group="W2">Google</a>
+        </div>
+        <div id="special">
+            Window 3 with different size <a href="http://google.com" data-window-group="W3">Google</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#r7').openLinksNewWindow();
+            $('#special').openLinksNewWindow({width:500, height:500});
+        });
+    </script>
+</body>
+</html>
